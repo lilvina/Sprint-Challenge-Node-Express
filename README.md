@@ -27,12 +27,15 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 - [ ] Mention two parts of Express that you learned about this week.
 
 - [ ] Describe Middleware?
+- Middleware are functions that extends software and is used to add features to Express. Even using route handlers play a huge role in middleware.
 
 - [ ] Describe a Resource?
 
 - [ ] What can the API return to help clients know if a request was successful?
+- If the request is successful for the client, it will send a 200 status, letting the user know the status was a success.
 
 - [ ] How can we partition our application into sub-applications?
+- By using express router, they split an application into sub-applications to make it more modular and easier to maintain.
 
 ## Project Setup
 
