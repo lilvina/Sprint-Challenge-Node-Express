@@ -11,6 +11,14 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  db.get(req.params.id).then(action => {
+    res.status(200).json(action)
+  }).catch(err => {
+    res.status(404).json({ message: 'Action with the ID does not exist' })
+  })
+})
+
 router.post('/', (req, res) => {
   db.insert(req.body).then(action => {
     res.status(201).json(action)

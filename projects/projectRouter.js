@@ -11,6 +11,14 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  db.get(req.params.id).then(project => {
+    res.status(200).json(project)
+  }).catch(err => {
+    res.status(404).json({ message: 'Project with the ID does not exist' })
+  })
+})
+
 router.get('/actions/:id', (req, res) => {
   db.getProjectActions(req.params.id).then(project => {
     res.status(200).json(project)
