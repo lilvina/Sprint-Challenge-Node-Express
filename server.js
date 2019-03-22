@@ -3,12 +3,13 @@ const helmet = require('helmet')
 
 const server = express()
 const actionRouter = require('./actions/actionRouter.js')
-//const projectRouter = require('./projects/projectRouter.js')
+const projectRouter = require('./projects/projectRouter.js')
 
 server.use(express.json())
 server.use(helmet())
 
 server.use('/api/action', actionRouter)
+server.use('/api/project', projectRouter)
 
 server.get('/', (req, res) => {
   res.send(`
